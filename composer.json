@@ -10,9 +10,10 @@
     ],
     "minimum-stability": "dev",
     "require": {}
-    "autoload" : {
-        "psr-4" : {
-	    "Junjiesang\\Llpay\\": "src/"
-	}
-    }
+
+    "autoload": {
+        "psr-4": {
+            "Junjiesang\\Llpay\\": "src/"
+        }
+    },
 }
