@@ -1,0 +1,18 @@
+{
+    "name": "junjiesang/llpay",
+    "description": "lianlianpay for laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jun Jie",
+            "email": "im@junjie.in"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+    "autoload" : {
+        "psr-4" : {
+	    "Junjiesang\\Llpay\\": "src/"
+	}
+    }
+}
