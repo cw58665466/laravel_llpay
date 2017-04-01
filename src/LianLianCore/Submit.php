@@ -10,6 +10,7 @@ namespace Junjiesang\Llpay\LianlianCore;
 
 use Junjiesang\Llpay\LianlianCore\Core;
 use Junjiesang\Llpay\LianlianCore\Rsa;
+use Log;
 
 class Submit
 {
@@ -38,7 +39,8 @@ class Submit
         $mysign = "";
         //PHP5.3 版本以上 风控参数去斜杠
         $prestr =stripslashes($prestr);
-        file_put_contents("log.txt","新的签名:".$prestr."\n", FILE_APPEND);
+
+        Log::info(['支付签名'=> $prestr]);
         switch (strtoupper(trim($this->llpay_config['sign_type']))) {
             case "MD5" :
                 $mysign = md5Sign($prestr, $this->llpay_config['key']);
@@ -49,7 +51,9 @@ class Submit
             default :
                 $mysign = "";
         }
-        file_put_contents("log.txt","签名:".$mysign."\n", FILE_APPEND);
+
+
+        Log::info(['签名'=> $mysign]);
         return $mysign;
     }
 
